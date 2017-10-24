@@ -1,4 +1,5 @@
 import copy
+import fileinput
 
 class StrMix:
     str1 = ''
@@ -81,10 +82,20 @@ def zipper(s1, s2, s3):
             else:
                 x = mixStack.pop()
 
-
-s1 = "cat"
-s2 = "tree"
-s3 = "cttaree"
-
-print(zipper(s1, s2, s3))
-        
+if __name__ == '__main__':
+    first_line = True
+    entries = 0
+    i = 0
+    for line in fileinput.input():
+        if first_line:
+            entries = int(line)
+            first_line = False
+            i = 1
+        else:
+            s = line.split()
+            if zipper(s[0], s[1], s[2]):
+                print('Data set ' + str(i) + ': yes')
+            else:
+                print('Data set ' + str(i) + ': no')
+            i += 1
+                    
