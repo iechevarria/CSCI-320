@@ -35,7 +35,6 @@ class StrMix:
 
 
 def zipper(s1, s2, s3):
-
     x = StrMix(s1, s2, '', s3, False)
     mixStack = []
 
@@ -98,4 +97,3 @@ if __name__ == '__main__':
             else:
                 print('Data set ' + str(i) + ': no')
             i += 1
-                    
